@@ -18,7 +18,11 @@ You should add information about:
 - sampling rate
 - and other...
 
-We have temporary seismological network, which doesn't have uniqe network code, in this case you should use 'XX' code, but we decided use 'LD' code.
+You should describe all information about your seiscmological network, and this information must be same in all three **Seiscomp** formats.
+We have temporary seismological network, which doesn't have uniqe network code, in this case obspy authors adivice use 'XX' code, but we decided use 'LD' code)
+'Location' parameter should be same in all three formats for your network. If this condition don't met, you can't get data from seiscomp database.
+If some parameters was changed, you can add this information in **StationXML**. (I add examples later)
+
 
 
 
