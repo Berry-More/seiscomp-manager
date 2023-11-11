@@ -5,7 +5,7 @@ This project consists scripts and instructions for working with **Seisomp softwa
 
 # Station XML
 
-First step - it is creation of stations metadata in Seiscomp data base. It is very important step, because, if your set this information badly, you can face with big problems in future. In general, all information about seismological station consists in **StationXML** file. You can create this file using my notebook `station_xml.ipynb`.
+First step - it is creation of stations metadata in **Seiscomp** database. It is very important step, because, if your set this information badly, you can face with big problems in future. In general, all information about seismological station consists in **StationXML** file. You can create this file using my notebook `station_xml.ipynb`.
 
 You should add information about:
 - station codes (names)
@@ -19,9 +19,21 @@ You should add information about:
 - and other...
 
 You should describe all information about your seiscmological network, and this information must be same in all three **Seiscomp** formats.
-We have temporary seismological network, which doesn't have uniqe network code, in this case obspy authors adivice use 'XX' code, but we decided use 'LD' code)
-'Location' parameter should be same in all three formats for your network. If this condition don't met, you can't get data from seiscomp database.
+
+We have temporary seismological network, which doesn't have uniqe network code, in this case **obspy** authors adivice use 'XX' code, but we decided use 'LD' code)
+
+'Location' parameter **must be same** in all three formats for your network. If this condition don't met, you can't get data from seiscomp database.
+
 If some parameters was changed, you can add this information in **StationXML**. (I add examples later)
+
+Short instruction about storing **StationXML** to **Seiscomp** database:
+1. Creation of **StationXML** file 'XX_HH_stations.xml' by `station_xml.ipynb`;
+2. Log in to **Seiscomp** Linux server as `sysop` user;
+3. Go to folder `station` in `seiscomp_scripts` by
+   ```
+   > cd seiscomp_scripts/station
+   ```
+5. bash add_stations.sh XX_HH_stations.xml
 
 
 
