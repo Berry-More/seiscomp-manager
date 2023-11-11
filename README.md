@@ -32,13 +32,15 @@ Short instruction about storing **StationXML** to **Seiscomp** database:
    
 2. Log in to **Seiscomp** Linux server as `sysop` user;
    
-3. Go to folder `station` in `seiscomp_scripts` by
+3. Go to folder `station` in `seiscomp_scripts` by:
    
    ```
    > cd seiscomp_scripts/station
    ```
+
+4. Add your **StationXML** file in this folder;
    
-4. Edit `setup_configs.sh` script. You just should add some commands for each your station.
+5. Edit `setup_configs.sh` script. You just should add some commands for each your station.
    
    ```bash
    # You should write your station names below
@@ -51,7 +53,11 @@ Short instruction about storing **StationXML** to **Seiscomp** database:
    # ------
    ```
    
-5. bash add_stations.sh XX_HH_stations.xml
+6. Start script `add_stations.sh` by:
+
+   ```
+   > bash add_stations.sh XX_HH_stations.xml
+   ```
 
 
 
