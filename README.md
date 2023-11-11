@@ -67,6 +67,16 @@ Short instruction about storing **StationXML** to **Seiscomp** database:
 
 After that new metadata about your seismological network should be added to **Seiscomp** database!
 
+# MSEED
+
+...
+
+# SeiscompML
+
+...
+
+
+
 
 
 
