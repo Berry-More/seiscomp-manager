@@ -27,13 +27,19 @@ We have temporary seismological network, which doesn't have uniqe network code, 
 If some parameters was changed, you can add this information in **StationXML**. (I add examples later)
 
 Short instruction about storing **StationXML** to **Seiscomp** database:
+
 1. Creation of **StationXML** file 'XX_HH_stations.xml' by `station_xml.ipynb`;
+   
 2. Log in to **Seiscomp** Linux server as `sysop` user;
+   
 3. Go to folder `station` in `seiscomp_scripts` by
+   
    ```
    > cd seiscomp_scripts/station
    ```
+   
 4. Edit `setup_configs.sh` script. You just should add some commands for each your station.
+   
    ```bash
    # You should write your station names below
    # -------
@@ -44,7 +50,8 @@ Short instruction about storing **StationXML** to **Seiscomp** database:
    ...
    # ------
    ```
-6. bash add_stations.sh XX_HH_stations.xml
+   
+5. bash add_stations.sh XX_HH_stations.xml
 
 
 
