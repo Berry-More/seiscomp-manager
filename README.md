@@ -52,12 +52,20 @@ Short instruction about storing **StationXML** to **Seiscomp** database:
    ...
    # ------
    ```
+
+6. Edit `add_stations.sh` script. Add your **Seiscomp** postgres database password to variable `seiscomp_pass`
+
+   ```bash
+   seiscomp_pass=1234abc
+   ```
    
-6. Start script `add_stations.sh` by:
+7. Start script `add_stations.sh` by:
 
    ```
    > bash add_stations.sh XX_HH_stations.xml
    ```
+
+After that new metadata about your seismological network should be added to **Seiscomp** database!
 
 
 
