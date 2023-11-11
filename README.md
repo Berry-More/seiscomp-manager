@@ -33,7 +33,18 @@ Short instruction about storing **StationXML** to **Seiscomp** database:
    ```
    > cd seiscomp_scripts/station
    ```
-5. bash add_stations.sh XX_HH_stations.xml
+4. Edit `setup_configs.sh` script. You just should add some commands for each your station.
+   ```bash
+   # You should write your station names below
+   # -------
+   # Example: printf "${station_binding_config}" > "${keys_dir}/station_{network_code}_{station_name}"
+   printf "${station_binding_config}" > "${keys_dir}/station_LD_SML00"
+   printf "${station_binding_config}" > "${keys_dir}/station_LD_SML01"
+   printf "${station_binding_config}" > "${keys_dir}/station_LD_SML02"
+   ...
+   # ------
+   ```
+6. bash add_stations.sh XX_HH_stations.xml
 
 
 
