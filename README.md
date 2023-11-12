@@ -30,7 +30,7 @@ Short instruction about storing **StationXML** to **Seiscomp** database:
 
 1. Creation of **StationXML** file 'XX_HH_stations.xml' by `station_xml.ipynb`;
    
-2. Log in to **Seiscomp** Linux server as `sysop` user;
+2. Log in to **Seiscomp** Linux server as `sysop` user by SSH;
    
 3. Go to folder `station` in `seiscomp_scripts` by:
    
@@ -69,7 +69,31 @@ After that new metadata about your seismological network should be added to **Se
 
 # MSEED
 
-...
+Second step - it is a transfer and storage seismological traces data to **Seiscomp** database. There is `tempstore` folder, which allowed huge block of memory for storing big data. This folder located in path `/3tb/tempstore/`. I advice to save all MSEED data in this folder dividing data on seismological networks folders. "Save MSEED to **Seiscomp**" - it is means start bash script with seiscomp commands, which process MSEED data and save it in local **Seiscomp** `archive` folder `home/sysop/seiscomp/var/lib/archive`. In `archive` folder all files have numeration by day in year (1-365).
+
+Short instruction about storing **MSEED** data to **Seiscomp** database:
+
+1. Log in to **Seiscomp** Linux server as `sysop` user by SSH;
+
+
+2. Move **MSEED** files from your computer to Linux server, in `/3tb/tempstore/*network*` folder;
+
+
+3. Go to folder `seiscomp_scripts`;
+
+```
+> cd seiscomp_scripts
+```
+
+4. Run `seed_archive.sh` script by command:
+
+```
+> bash seed_archive.sh /3tb/tempstore/*network*/MSEED
+```
+
+This bash script just apply **Seiscomp** command `scart` to all files in directory.
+
+
 
 # SeiscompML
 
