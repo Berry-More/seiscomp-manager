@@ -91,9 +91,7 @@ Short instruction about storing **MSEED** data to **Seiscomp** database:
 > bash seed_archive.sh /3tb/tempstore/*network*/MSEED
 ```
 
-This bash script just apply **Seiscomp** command `scart` to all files in directory.
-
-
+This bash script just apply **Seiscomp** command `scart` to all files in directory. This command process **MSEED** data and save it in **Seiscomp** database.
 
 # SeiscompML
 
