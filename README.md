@@ -93,7 +93,7 @@ Short instruction about storing **MSEED** data to **Seiscomp** database:
 
 This bash script just apply **Seiscomp** command `scart` to all files in directory. This command process **MSEED** data and save it in **Seiscomp** database.
 
-# SeiscompML
+# SeiscompXML
 
 Our laboratory work with 'SSD' format of storing information about seismological events. This format consists information about determined earthquake parameters `#EARTHQUAKE`, information about detected amplitudes of S waves `#AMPLITUDE` and information about arrival times of P and S waves `#ARRIVAL`. 
 
