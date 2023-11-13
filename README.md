@@ -259,14 +259,12 @@ pick_evaluation_status = 'final'
 2. Log in to **Seiscomp** Linux server as `sysop` user by SSH;
 
 3. Move all new `SCML` files to Linux server.
-
-In my case, I move my `SCML` data to `/3tb/tempstore/*network*/events`.
+   In my case, I move my `SCML` data to `/3tb/tempstore/*network*/events`.
 
 4. Go to `/home/sysop/seiscomp_scripts/events` folder.
-
-```
-> cd /home/sysop/seiscomp_scripts/events
-```
+   ```
+   > cd /home/sysop/seiscomp_scripts/events
+   ```
 
 5. Run `save_scml2db.sh` script indicating directory, where storage `SCML` files.
 
