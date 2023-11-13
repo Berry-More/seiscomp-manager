@@ -95,7 +95,9 @@ This bash script just apply **Seiscomp** command `scart` to all files in directo
 
 # SeiscompML
 
-Our laboratory work with 'SSD' format of storing information about seismological events. This format consists information about determined earthquake parameters `#EARTHQUAKE`, information about detected amplitudes of S waves `#AMPLITUDE` and information about arrival times of P and S waves `#ARRIVAL`. There is 'SSD' example below
+Our laboratory work with 'SSD' format of storing information about seismological events. This format consists information about determined earthquake parameters `#EARTHQUAKE`, information about detected amplitudes of S waves `#AMPLITUDE` and information about arrival times of P and S waves `#ARRIVAL`. 
+
+There is information from 'SSD' file below:
 
 ```
 #SSDREPORT=20210807152934.ssd
@@ -235,7 +237,22 @@ Our laboratory work with 'SSD' format of storing information about seismological
 #ARRIVAL [Dist-Az]		91.6879;126.071
 ```
 
+I created `ssd2scml.ipynb` notebook which convert `SSD` files to 'QuakeML' or 'SCML'. In addition, I created bash script `save_scml2db.sh`, which can move your 'SCML' files in **Seiscomp** database. Thus, if you want to storage your 'SSD' data to **Seiscomp** you should:
 
+1. Convert your 'SSD' files to 'SCML' using `ssd2scml.ipynb` notebook
+There are some parameters below, which relevant to our lab temporary seismological network, but you can change it for your aims.
+```python
+resource_id = 'smi:ru.ipgg.seislab'
+event_type = 'earthquake'
+event_type_certainty = 'known'
+origin_depth_type = 'from location'
+magnitude_type = 'Mb'
+pick_polarity = 'undecidable'
+pick_evaluation_mode = 'manual'
+pick_evaluation_status = 'final'
+```
+
+2. 
 
 
 
