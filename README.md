@@ -81,15 +81,15 @@ Short instruction about storing **MSEED** data to **Seiscomp** database:
 
 3. Go to folder `seiscomp_scripts`;
 
-```
-> cd seiscomp_scripts
-```
+   ```
+   > cd seiscomp_scripts
+   ```
 
 4. Run `seed_archive.sh` script by command:
 
-```
-> bash seed_archive.sh /3tb/tempstore/*network*/MSEED
-```
+   ```
+   > bash seed_archive.sh /3tb/tempstore/*network*/MSEED
+   ```
 
 This bash script just apply **Seiscomp** command `scart` to all files in directory. This command process **MSEED** data and save it in **Seiscomp** database.
 
@@ -244,21 +244,22 @@ I created `ssd2scml.ipynb` notebook which convert `SSD` files to `QuakeML` or `S
 
 1. Convert your `SSD` files to `SCML` using `ssd2scml.ipynb` notebook.
 
-There are some parameters below, which relevant to our lab temporary seismological network, but you can change it for your aims.
-```python
-resource_id = 'smi:ru.ipgg.seislab'
-event_type = 'earthquake'
-event_type_certainty = 'known'
-origin_depth_type = 'from location'
-magnitude_type = 'Mb'
-pick_polarity = 'undecidable'
-pick_evaluation_mode = 'manual'
-pick_evaluation_status = 'final'
-```
+   There are some parameters below, which relevant to our lab temporary seismological network, but you can change it for your aims.
+   ```python
+   resource_id = 'smi:ru.ipgg.seislab'
+   event_type = 'earthquake'
+   event_type_certainty = 'known'
+   origin_depth_type = 'from location'
+   magnitude_type = 'Mb'
+   pick_polarity = 'undecidable'
+   pick_evaluation_mode = 'manual'
+   pick_evaluation_status = 'final'
+   ```
 
 2. Log in to **Seiscomp** Linux server as `sysop` user by SSH;
 
 3. Move all new `SCML` files to Linux server.
+   
    In my case, I move my `SCML` data to `/3tb/tempstore/*network*/events`.
 
 4. Go to `/home/sysop/seiscomp_scripts/events` folder.
@@ -268,9 +269,9 @@ pick_evaluation_status = 'final'
 
 5. Run `save_scml2db.sh` script indicating directory, where storage `SCML` files.
 
-```
-> bash save_scml2db.sh /3tb/tempstore/*network*/events
-```
+   ```
+   > bash save_scml2db.sh /3tb/tempstore/*network*/events
+   ```
 
 Factually this bash script just apply `scdispatch` **Seiscomp's** command to each file in indicated folder.
 
