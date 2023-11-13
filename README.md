@@ -97,8 +97,8 @@ This bash script just apply **Seiscomp** command `scart` to all files in directo
 
 Our laboratory work with 'SSD' format of storing information about seismological events. This format consists information about determined earthquake parameters `#EARTHQUAKE`, information about detected amplitudes of S waves `#AMPLITUDE` and information about arrival times of P and S waves `#ARRIVAL`. 
 
-There is information from 'SSD' file below:
-
+<details>
+<summary>There is information from 'SSD' file</summary>
 ```
 #SSDREPORT=20210807152934.ssd
 #EARTHQUAKE [Origin Time] 2021.08.07 15:29:34.5726
@@ -236,6 +236,7 @@ There is information from 'SSD' file below:
 #ARRIVAL [Sign]		?
 #ARRIVAL [Dist-Az]		91.6879;126.071
 ```
+</details>
 
 I created `ssd2scml.ipynb` notebook which convert `SSD` files to `QuakeML` or `SCML`. In addition, I created bash script `save_scml2db.sh`, which can move your `SCML` files in **Seiscomp** database. Thus, if you want to storage your `SSD` data to **Seiscomp** you should:
 
