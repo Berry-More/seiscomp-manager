@@ -237,9 +237,10 @@ There is information from 'SSD' file below:
 #ARRIVAL [Dist-Az]		91.6879;126.071
 ```
 
-I created `ssd2scml.ipynb` notebook which convert `SSD` files to 'QuakeML' or 'SCML'. In addition, I created bash script `save_scml2db.sh`, which can move your 'SCML' files in **Seiscomp** database. Thus, if you want to storage your 'SSD' data to **Seiscomp** you should:
+I created `ssd2scml.ipynb` notebook which convert `SSD` files to `QuakeML` or `SCML`. In addition, I created bash script `save_scml2db.sh`, which can move your `SCML` files in **Seiscomp** database. Thus, if you want to storage your `SSD` data to **Seiscomp** you should:
 
-1. Convert your 'SSD' files to 'SCML' using `ssd2scml.ipynb` notebook
+1. Convert your `SSD` files to `SCML` using `ssd2scml.ipynb` notebook.
+
 There are some parameters below, which relevant to our lab temporary seismological network, but you can change it for your aims.
 ```python
 resource_id = 'smi:ru.ipgg.seislab'
@@ -252,7 +253,25 @@ pick_evaluation_mode = 'manual'
 pick_evaluation_status = 'final'
 ```
 
-2. 
+2. Log in to **Seiscomp** Linux server as `sysop` user by SSH;
+
+3. Move all new `SCML` files to Linux server.
+
+In my case, I move my `SCML` data to `/3tb/tempstore/*network*/events`.
+
+4. Go to `/home/sysop/seiscomp_scripts/events` folder.
+
+```
+> cd /home/sysop/seiscomp_scripts/events
+```
+
+5. Run `save_scml2db.sh` script indicating directory, where storage `SCML` files.
+
+```
+> bash save_scml2db.sh /3tb/tempstore/*network*/events
+```
+
+Factually this bash script just apply `scdispatch` **Seiscomp's** command to each file in indicated folder.
 
 
 
