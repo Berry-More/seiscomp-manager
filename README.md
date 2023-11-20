@@ -1,6 +1,6 @@
 # Seiscomp lab 572
 
-This project consists scripts and instructions for working with **Seisomp software**. **Seiscomp** - it is big application, which allow **obtain**, **store** and **process** seismology data. Seiscomp developers is a GFZ German Research Centre for Geosciences. In this paper I try to explain how you can store your seismology data in Seiscomp. In our case Seiscomp consists three types of data: seismic traces (**MSEED**), metadata about seismological stations (**StationXML**) and informaton about seismic events (**QuakeML/SeiscompML**). You can find more information about this formats in [obspy](https://docs.obspy.org/index.html) documentation.
+This project consists scripts and instructions for working with **Seisomp software**. **Seiscomp** - it is big application, which allow **obtain**, **store** and **process** seismology data. **Seiscomp** developers is a GFZ German Research Centre for Geosciences. In this paper I try to explain how you can store your seismology data in Seiscomp. In our case Seiscomp consists three types of data: seismic traces (**MSEED**), metadata about seismological stations (**StationXML**) and informaton about seismic events (**QuakeML/SeiscompML**). You can find more information about this formats in [obspy](https://docs.obspy.org/index.html) documentation.
 
 
 # Station XML
@@ -93,7 +93,7 @@ Short instruction about storing **MSEED** data to **Seiscomp** database:
 
 This bash script just apply **Seiscomp** command `scart` to all files in directory. This command process **MSEED** data and save it in **Seiscomp** database.
 
-# SeiscompXML
+# Seiscomp XML
 
 Our laboratory work with 'SSD' format of storing information about seismological events. This format consists information about determined earthquake parameters `#EARTHQUAKE`, information about detected amplitudes of S waves `#AMPLITUDE` and information about arrival times of P and S waves `#ARRIVAL`. 
 
