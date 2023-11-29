@@ -301,6 +301,6 @@ Data downloaded by API. API takes this arguments:
 6) Specific error argument (*nodata=404*). It helps when API can't to provide data (e.g. because you set some wrong parameters). In this case API post to you error 404. If you don't set this argument you just get empty response.
 
 You can read data dirrectly in Python.
-![alt text](https://github.com/Berry-More/seiscomp-manager/blob/main/pictures/read_data.png?raw=true)
+![alt text](https://github.com/Berry-More/seiscomp-manager/blob/main/pictures/read_data.png)
 
 
