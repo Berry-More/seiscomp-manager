@@ -307,4 +307,18 @@ You can read data dirrectly in Python.
 
 ## Getting Station XML
 
-You can get fully informaton about stations in xml-format by http://84.237.52.214:8080/fdsnws/station/1/query. Also you can use "builder" like in [here](#getting-mseed) (http://84.237.52.214:8080/fdsnws/station/1/builder).
+You can get fully informaton about stations in xml-format by http://84.237.52.214:8080/fdsnws/station/1/query. Also you can use "builder" like in [here](#getting-mseed) (http://84.237.52.214:8080/fdsnws/station/1/builder). Here you can recieve all information about seismological inventory. You can read this data in Python using `read_inventory` function.
+
+
+## Getting Seiscomp XML
+
+If you want to work with event data you should understand structure of this data. QuakeML (or very similar format Seiscomp XML (SCML)) - it is conventional XML-format consists information about seismological events. In general, I use Seiscomp XML format, because it can very simple add to Seiscomp data base. But you can use any of this formats, and don't worry, because **obspy** can read all this formats. 
+
+Structure of QuakeML and SCML very similar and looks like this:
+
+--> Event
+----> Origin
+------> Arrivals
+----> Magnitude
+----> Picks
+----> Amplitudes
