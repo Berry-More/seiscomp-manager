@@ -312,13 +312,24 @@ You can get fully informaton about stations in xml-format by http://84.237.52.21
 
 ## Getting Seiscomp XML
 
-If you want to work with event data you should understand structure of this data. QuakeML (or very similar format Seiscomp XML (SCML)) - it is conventional XML-format consists information about seismological events. In general, I use Seiscomp XML format, because it can very simple add to Seiscomp data base. But you can use any of this formats, and don't worry, because **obspy** can read all this formats. 
+If you want to work with event data *you should understand structure of this data*. **QuakeML** (or very similar format **Seiscomp XML (SCML)**) - it is conventional XML-format consists information about seismological events. In general, I use **Seiscomp XML** format, because it can very simple add to Seiscomp data base. But you can use any of this formats, and don't worry, because **obspy** can read all this formats. 
 
-Structure of QuakeML and SCML very similar and looks like this:
+Structure of **QuakeML** and **SCML** very similar and looks like this:
 
---> Event
-----> Origin
-------> Arrivals
-----> Magnitude
-----> Picks
-----> Amplitudes
+--> **Event**
+
+----> **Origin**
+
+------> **Arrivals**
+
+----> **Magnitude**
+
+----> **Picks**
+
+----> **Amplitudes**
+
+All classes which forming **SCML** have `resource_id` field. It is some unique id for each element. In Seiscomp manual said that base of `resource_id` should be string with information about region, institute, lab. I also added to this network code. Example of base of `resource_id` that I used allow (*$*$ - variable*):
+
+> **base_id = "smi:ru.ipgg.seislab/$network_code$"**
+
+> *Example: "smi:ru.ipgg.seislab/LD"*
