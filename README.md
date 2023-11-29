@@ -38,7 +38,7 @@ Short instruction about storing **StationXML** to **Seiscomp** database:
    > cd seiscomp_scripts/station
    ```
 
-4. Add your **StationXML** file in this folder;
+4. Add your **Station XML** file in this folder;
    
 5. Edit `setup_configs.sh` script. You just should add some commands for each your station.
    
@@ -301,6 +301,10 @@ Data downloaded by API. API takes this arguments:
 6) Specific error argument (*nodata=404*). It helps when API can't to provide data (e.g. because you set some wrong parameters). In this case API post to you error 404. If you don't set this argument you just get empty response.
 
 You can read data dirrectly in Python.
+
 ![alt text](https://github.com/Berry-More/seiscomp-manager/blob/main/pictures/read_data.png)
 
 
+## Getting Station XML
+
+You can get fully informaton about stations in xml-format by http://84.237.52.214:8080/fdsnws/station/1/query. Also you can use "builder" like in [here](##Getting-MSEED) (http://84.237.52.214:8080/fdsnws/station/1/builder).
