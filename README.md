@@ -284,4 +284,7 @@ You can get all your data by Seiscomp FDSNWS server. It is API which provide pos
 
 There is web-service which can generate requests for Seiscomp API [mseed data](http://84.237.52.214:8080/fdsnws/dataselect/1/builder).
 
+Link to downloading data froms by this steps:
+1. Server adress with URI "dataselect" - «http://84.237.52.214:8080/fdsnws/dataselect/1/query»
+
 
