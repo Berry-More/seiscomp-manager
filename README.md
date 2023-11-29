@@ -286,6 +286,7 @@ There is web-service which can generate requests for Seiscomp API [mseed data](h
 
 Link to download data looks like that:
 > http://84.237.52.214:8080/fdsnws/dataselect/1/query
+
 You can add some arguments to select you data. You should add to link "?" and arguments that are separated by "&".
 > http://84.237.52.214:8080/fdsnws/dataselect/1/query?network=LD&location=XX
 
