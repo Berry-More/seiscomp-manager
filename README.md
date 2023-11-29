@@ -284,7 +284,14 @@ You can get all your data by Seiscomp FDSNWS server. It is API which provide pos
 
 There is web-service which can generate requests for Seiscomp API [mseed data](http://84.237.52.214:8080/fdsnws/dataselect/1/builder).
 
-Link to downloading data froms by this steps:
-1. Server adress with URI "dataselect" - «http://84.237.52.214:8080/fdsnws/dataselect/1/query»
+Link to download data looks like that:
+> http://84.237.52.214:8080/fdsnws/dataselect/1/query
+You can add some arguments to select you data. You should add to link "?" and arguments that are separated by "&".
+> http://84.237.52.214:8080/fdsnws/dataselect/1/query?network=LD&location=XX
+
+Data downloaded by API. API takes this arguments:
+1) Start time (*starttime=2021-07-31T00%3A00%3A00*);
+2) End time (*endtime=2021-08-01T00%3A00%3A00*)
+> time format: **year**-**month**-**day**T**hours**%3A**minutes**%3A**seconds**
 
 
