@@ -307,7 +307,7 @@ You can read data dirrectly in Python.
 
 ## Getting Station XML
 
-You can get fully informaton about stations in xml-format by http://84.237.52.214:8080/fdsnws/station/1/query. Also you can use "builder" like in [here](#getting-mseed) (http://84.237.52.214:8080/fdsnws/station/1/builder). Here you can recieve all information about seismological inventory. You can read this data in Python using `read_inventory` function.
+You can get fully informaton about stations in xml-format by http://84.237.52.214:8080/fdsnws/station/1/query. Also you can use "builder" like in [here](#getting-mseed) (http://84.237.52.214:8080/fdsnws/station/1/builder). Here you can recieve all information about seismological inventory. You can read this data in Python using `obspy.read_inventory` function.
 
 
 ## Getting Seiscomp XML
@@ -334,14 +334,68 @@ All classes which forming **SCML** have `resource_id` field. It is *some unique 
 >
 > *Example: "smi:ru.ipgg.seislab/LD"*
 
-
 + **Event class** fully described seismology event. It consists information about:
 1) Type of event (`type` field);
 2) Source info (`origin` class);
 3) Magnitude info (`magnitude` class);
 4) Picks info (list with `pick` class objects);
-5) Amplitude info (list with `amplitude` class objects);
+5) Amplitude info (list with `amplitude` class objects)
 
 > **event_id = base_id + "event/$time$"**
 >
 > *Example: "smi:ru.ipgg.seislab/LD/event/20210731003147"*
+
++ **Origin class** described event origin. It consists information about:
+1) Time in origin (`time` field);
+2) Latitude (`latitude` field with error field);
+3) Longitude (`longitude` field with error field);
+4) Depth (`depth` field with error field);
+5) Info from picks (`arrivals` class)
+
+> **origin_id = event_id + "/origin"**
+>
+> *Example: smi:ru.ipgg.seislab/LD/event/20210731003147/origin*
+
++ **Arrivals class** it is information about origin, which obtained by picking. It contains:
+1) Link to pick (`pickID` field);
+2) Phase (`phase` field);
+3) Azimuth (`azimuth` field);
+4) Distance (`distance` field)
+
+> **arrival_id = event_id + "/arrival/$phase$/$station$/$channel$"**
+>
+> *Example: smi:ru.ipgg.seislab/LD/event/20210731003147/arrival/P/SML00/HHN*
+
++ **Magnitude class** which consists information about magnitude:
+1) Magnitude value (`mag` field);
+2) Magnitude type (`type` field);
+3) Link to origin (`originID`, field)
+
+> **magnitude_id = event_id + "/magnitude"**
+>
+> *Example: smi:ru.ipgg.seislab/LD/event/20210731003147/magnitude*
+
++ **Pick class** consists all information about travel times of P and S waves:
+1) Picked time (`time` field);
+2) Info about network, location, station, channel (`waveformID` class);
+3) Phase (`phaseHint` field)
+Other parameters don't used.
+
+> **pick_id = event_id + "/pick/$phase$/$station$/$channel$"**
+>
+> *Example: smi:ru.ipgg.seislab/LD/event/20210731003147/pick/P/SML00/HHN*
+
++ **Amplitude class** consists information about amplitudes:
+1) Amplitude type (`type` field. In general, I set "END");
+2) Amplitude value (`amplitude` field);
+3) Time when this amplitude was picked (`timeWindow` class, `reference` field);
+4) Period (`period` fields);
+5) Amplitude unit (`unit` field. I use micron:second);
+6) Info about network, location, station, channel (`waveformID` class);
+
+> **amplitude_id = event_id + "amplitude/$station$/$channel$"**
+>
+> *Example: smi:ru.ipgg.seislab/LD/event/20210731003147/amplitude/SML00/HHN*
+
+
+**All information** about events you can get here http://84.237.52.214:8080/fdsnws/event/1/builder. If you want to get **full** information about events, you should mark "All Origins", "All Magnitudes" and "Arrivals". After that, builder should generate link to download *XML-file*. You can read this file by function `obspy.read_events`. You can change this link as you wish.
