@@ -276,7 +276,12 @@ I created `ssd2scml.ipynb` notebook which convert `SSD` files to `QuakeML` or `S
 Factually this bash script just apply `scdispatch` **Seiscomp's** command to each file in indicated folder.
 
 
+# FDSNWS
 
+You can get all your data by Seiscomp FDSNWS server. It is API which provide possible to download all seismology data.
 
+## Getting MSEED
+
+There is web-service which can generate requests for Seiscomp API [mseed data](http://84.237.52.214:8080/fdsnws/dataselect/1/builder).
 
 
