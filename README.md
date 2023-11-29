@@ -334,8 +334,8 @@ All classes which forming **SCML** have `resource_id` field. It is *some unique 
 >
 > *Example: "smi:ru.ipgg.seislab/LD"*
 
-Event class fully described seismology event. It consists information about:
 
++ **Event class** fully described seismology event. It consists information about:
 1) Type of event (`type` field);
 2) Source info (`origin` class);
 3) Magnitude info (`magnitude` class);
