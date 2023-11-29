@@ -307,4 +307,4 @@ You can read data dirrectly in Python.
 
 ## Getting Station XML
 
-You can get fully informaton about stations in xml-format by http://84.237.52.214:8080/fdsnws/station/1/query. Also you can use "builder" like in [here](##Getting-MSEED) (http://84.237.52.214:8080/fdsnws/station/1/builder).
+You can get fully informaton about stations in xml-format by http://84.237.52.214:8080/fdsnws/station/1/query. Also you can use "builder" like in [here](#getting-mseed) (http://84.237.52.214:8080/fdsnws/station/1/builder).
