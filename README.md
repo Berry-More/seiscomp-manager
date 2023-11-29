@@ -328,8 +328,20 @@ Structure of **QuakeML** and **SCML** very similar and looks like this:
 
 ----> **Amplitudes**
 
-All classes which forming **SCML** have `resource_id` field. It is some unique id for each element. In Seiscomp manual said that base of `resource_id` should be string with information about region, institute, lab. I also added to this network code. First word should be `smi:` - it is rule. Example of base of `resource_id` that I used allow (*$*$ - variable*):
+All classes which forming **SCML** have `resource_id` field. It is *some unique id* for each element. In **Seiscomp** manual said that base of `resource_id` should be string with information about *region*, *institute*, *lab*. I also added to this *network code*. First word should be `smi:` - it is rule. Example of base of `resource_id` that I used allow (*$*$ - variable*):
 
 > **base_id = "smi:ru.ipgg.seislab/$network_code$"**
 >
 > *Example: "smi:ru.ipgg.seislab/LD"*
+
+Event class fully described seismology event. It consists information about:
+
+1) Type of event (`type` field);
+2) Source info (`origin` class);
+3) Magnitude info (`magnitude` class);
+4) Picks info (list with `pick` class objects);
+5) Amplitude info (list with `amplitude` class objects);
+
+> **event_id = base_id + "event/$time$"**
+>
+> *Example: "smi:ru.ipgg.seislab/LD/event/20210731003147"*
