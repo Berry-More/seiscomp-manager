@@ -67,6 +67,16 @@ Short instruction about storing **StationXML** to **Seiscomp** database:
 
 After that new metadata about your seismological network should be added to **Seiscomp** database!
 
+If you want to delete some old network inventory from **Sesicomp** you should use this instruction:
+
+1. Log in to server
+   
+2. Delete old inventory file `XX_HH_stations.xml` from `/home/sysop/seiscomp/etc/inventory` folder
+
+3. Run command `seiscomp update-config inventory`
+
+4. Restart **Seiscomp** `seiscomp stop` -> `seiscomp start`
+
 # MSEED
 
 Second step - it is a transfer and storage seismological traces data to **Seiscomp** database. There is `tempstore` folder, which allowed huge block of memory for storing big data. This folder located in path `/3tb/tempstore/`. I advice to save all MSEED data in this folder dividing data on seismological networks folders. "Save MSEED to **Seiscomp**" - it is means start bash script with seiscomp commands, which process MSEED data and save it in local **Seiscomp** `archive` folder `home/sysop/seiscomp/var/lib/archive`. In `archive` folder all files have numeration by day in year (1-365).
